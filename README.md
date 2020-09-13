@@ -14,6 +14,10 @@ brew install ansible
 ```
 ansible-playbook --syntax-check setup.yml -i inventory
 ```
+- dryrun
+```
+ansible-playbook --check --diff setup.yml -i inventory
+```
 - run playbook
 ```
 ansible-playbook setup.yml -i inventory
