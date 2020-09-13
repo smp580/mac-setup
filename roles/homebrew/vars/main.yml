@@ -12,3 +12,4 @@ packages:
   - { name: vim, state: present }
   - { name: tree, state: present }
   - { name: openssl, state: present }
+  - { name: tmux, state: present }
