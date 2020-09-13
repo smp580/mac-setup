@@ -1,0 +1,5 @@
+- name: copy .vimrc file
+  copy:
+    src: "{{ inventory_dir }}/roles/config/files/.vimrc"
+    dest: "~/.vimrc"
+    mode: '0644'
