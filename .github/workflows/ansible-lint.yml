@@ -17,7 +17,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -38,6 +38,6 @@ jobs:
           #   playbook_2.yml
           targets: ""
           override-deps: |
-            ansible==2.9.13
-            ansible-lint==4.3
+            ansible==2.9
+            ansible-lint==4.2.0
           args: ""
