@@ -11,6 +11,6 @@
 #      src: "files/.zshrc"
 #      dest: "~/.zshrc"
 #      mode: '0644'
-tasks:
-  - name: source
-    shell: source ~/.zshrc
+
+#  - name: source
+#    shell: source ~/.zshrc
