@@ -8,4 +8,4 @@
   roles:
     - homebrew
     - homebrew_cask
-#    - config
+    - config

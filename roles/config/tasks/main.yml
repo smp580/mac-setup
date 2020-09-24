@@ -1,16 +1,15 @@
 ---
-#tasks:
-#  - name: ~/.vimrc
-#    copy:
-#      src: "files/.vimrc"
-#      dest: "~/.vimrc"
-#      mode: '0644'
+- name: ~/.vimrc
+  copy:
+    src: "files/.vimrc"
+    dest: "~/.vimrc"
+    mode: '0644'
 
-#  - name: ~/.zshrc
-#    copy:
-#      src: "files/.zshrc"
-#      dest: "~/.zshrc"
-#      mode: '0644'
+- name: ~/.zshrc
+  copy:
+    src: "files/.zshrc"
+    dest: "~/.zshrc"
+    mode: '0644'
 
-#  - name: source
-#    shell: source ~/.zshrc
+- name: source
+  shell: source ~/.zshrc
