@@ -1,11 +1,11 @@
 ---
-- name: copy .vimrc file
+- name: ~/.vimrc
   copy:
     src: "files/.vimrc"
     dest: "~/.vimrc"
     mode: '0644'
 
-- name: copy .zshrc file
+- name: ~/.zshrc
   copy:
     src: "files/.zshrc"
     dest: "~/.zshrc"
