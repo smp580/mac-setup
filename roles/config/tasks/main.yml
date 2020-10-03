@@ -12,6 +12,6 @@
     mode: '0644'
 
 - name: source
-  shell: source ~/.zshrc
+  command: /bin/zsh "source ~/.zshrc"
   register: res
   changed_when: res.rc != 0
