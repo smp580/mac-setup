@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: ansible CI for macOS
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - "*"
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      # pre-build
+      - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      - run: brew install ansible ansible-lint
+      # test
+      - run: ansible-lint -vvv
