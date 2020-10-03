@@ -15,3 +15,4 @@ packages:
   - { name: tmux, state: present }
   - { name: gh, state: present }
   - { name: awscli, state: present }
+  - { name: jq, state: present }
