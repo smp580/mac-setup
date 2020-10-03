@@ -9,5 +9,16 @@
       state: "{{ item.state }}"
     with_items: "{{ packages }}"
 
+  - name: check docker process
+    shell: ps -ef | grep "/Applications/Docker.app" | grep -v grep
+    failed_when: false
+    changed_when: false
+    register: service_docker_status
+
+  - debug: var=service_docker_status
+  - name: launch docker
+    command: open /Applications/Docker.app
+    when: service_docker_status.rc != 0
+
   tags:
     - homebrew_cask
