@@ -15,7 +15,6 @@
     changed_when: false
     register: service_docker_status
 
-  - debug: var=service_docker_status
   - name: launch docker
     command: open /Applications/Docker.app
     when: service_docker_status.rc != 0
