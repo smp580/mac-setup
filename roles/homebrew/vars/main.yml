@@ -13,3 +13,6 @@ packages:
   - { name: tree, state: present }
   - { name: openssl, state: present }
   - { name: tmux, state: present }
+  - { name: gh, state: present }
+  - { name: awscli, state: present }
+  - { name: jq, state: present }

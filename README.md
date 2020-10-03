@@ -6,13 +6,17 @@
 ```
 - install ansible
 ```
-brew install ansible
+brew install ansible ansible-lint
 ```
 
 ### ansibleの実行
 - check syntax
 ```
 ansible-playbook --syntax-check setup.yml -i inventory
+```
+- lint
+```
+ansible-lint -vvv
 ```
 - dryrun
 ```
