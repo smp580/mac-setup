@@ -1,0 +1,9 @@
+---
+extensions:
+  - vscoss.vscode-ansible
+  - shakram02.bash-beautify
+  - mads-hartmann.bash-ide-vscode
+  - knisterpeter.vscode-github
+  - bierner.markdown-preview-github-styles
+  - donjayamanne.python-extension-pack
+  - ms-azuretools.vscode-docker
