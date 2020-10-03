@@ -13,3 +13,5 @@
 
 - name: source
   shell: source ~/.zshrc
+  register: res
+  changed_when: res.rc != 0
