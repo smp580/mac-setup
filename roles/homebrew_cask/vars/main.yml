@@ -6,3 +6,4 @@ packages:
   - { name: google-chrome, state: present }
   - { name: postman, state: present }
   - { name: docker, state: present }
+  - { name: alfred, state: present }

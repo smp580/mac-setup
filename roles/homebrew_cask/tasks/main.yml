@@ -21,5 +21,17 @@
     when: service_docker_status.rc != 0
     ignore_errors: "{{ ansible_check_mode }}"
 
+  - name: check alfred process
+    shell: ps -ef | grep "/Applications/Alfred" | grep -v grep
+    failed_when: false
+    changed_when: false
+    register: service_alfred_status
+    when: not ansible_check_mode
+
+  - name: launch alfred
+    command: open /Applications/Alfred\ 4.app
+    when: service_alfred_status.rc != 0
+    ignore_errors: "{{ ansible_check_mode }}"
+
   tags:
     - homebrew_cask
