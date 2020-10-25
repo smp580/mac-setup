@@ -44,11 +44,11 @@ jobs:
                   },
                   {
                     "title": "branch name",
-                    "value": "${{ github.head_ref }}"
+                    "value": \`"${{ github.head_ref }}"\`
                   },
                   {
                     "title": "commit sha",
-                    "value": "${{ github.event.pull_request.head.sha }}"
+                    "value": "${{ github.event.pull_request.html_url }}/commits/${{ github.event.pull_request.head.sha }}"
                   }
                 ]
               }
@@ -77,11 +77,11 @@ jobs:
                   },
                   {
                     "title": "branch name",
-                    "value": "${{ github.head_ref }}"
+                    "value": \`"${{ github.head_ref }}"\`
                   },
                   {
                     "title": "commit sha",
-                    "value": "${{ github.event.pull_request.head.sha }}"
+                    "value": "${{ github.event.pull_request.html_url }}/commits/${{ github.event.pull_request.head.sha }}"
                   }
                 ]
               }
