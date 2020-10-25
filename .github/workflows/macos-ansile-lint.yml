@@ -21,11 +21,11 @@ jobs:
       - name: Set COMMIT_MESSAGE
         run: echo ::set-env name=COMMIT_MESSAGE::$(echo "${{ github.event.head_commit.message }}" | tr '\n' ' ')
       - name: debug
+        env:
+          GITHUB_EVENT_CONTEXT: ${{ toJson(github.event) }}
         run: |
           env
-          echo "${{ github.event.payload }}"
-          echo "${{ github.head_ref }}"
-          echo "${{ github.event.pull_requests.url }}"
+          echo "$GITHUB_EVENT_CONTEXT"
       - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
       - run: brew install ansible ansible-lint
       # test
