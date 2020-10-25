@@ -8,14 +8,20 @@ on:
   pull_request:
     branches:
     - "*"
+  push: "*"
 
 jobs:
   build:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - name: debug
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
       # build
-      - run: /bin/bash -c +e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)";true
+      - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)";true
       - run: brew install ansible ansible-lint
       # test
       - run: ansible-lint -vvv
