@@ -23,8 +23,9 @@ jobs:
       - name: debug
         env:
           GITHUB_EVENT_CONTEXT: ${{ toJson(github.event) }}
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          env
+          echo "$GITHUB_CONTEXT"
           echo "$GITHUB_EVENT_CONTEXT"
       - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
       - run: brew install ansible ansible-lint
