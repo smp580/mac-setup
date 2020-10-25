@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # build
-      - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)";true
+      - run: /bin/bash -c +e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)";true
       - run: brew install ansible ansible-lint
       # test
       - run: ansible-lint -vvv
