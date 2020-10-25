@@ -25,6 +25,7 @@ jobs:
           env
           echo "${{ github.event.payload }}"
           echo "${{ github.head_ref }}"
+          echo "${{ github.event.pull_requests.url }}"
       - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
       - run: brew install ansible ansible-lint
       # test
