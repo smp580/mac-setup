@@ -23,7 +23,7 @@ jobs:
       - name: debug
         run: |
           env
-          jq "${{ github.event }}"
+          echo "${{ github.event.payload }}"
       - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
       - run: brew install ansible ansible-lint
       # test
