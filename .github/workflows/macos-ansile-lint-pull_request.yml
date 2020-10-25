@@ -44,7 +44,7 @@ jobs:
                   },
                   {
                     "title": "branch name",
-                    "value": \`"${{ github.head_ref }}"\`
+                    "value": "${{ github.head_ref }}"
                   },
                   {
                     "title": "commit sha",
@@ -77,7 +77,7 @@ jobs:
                   },
                   {
                     "title": "branch name",
-                    "value": \`"${{ github.head_ref }}"\`
+                    "value": "${{ github.head_ref }}"
                   },
                   {
                     "title": "commit sha",
