@@ -44,7 +44,7 @@ jobs:
                   },
                   {
                     "title": "branch name",
-                    "value": "${{ github.event.}}"
+                    "value": "${{ github.event.head_ref }}"
                   },
                   {
                     "title": "commit sha",
