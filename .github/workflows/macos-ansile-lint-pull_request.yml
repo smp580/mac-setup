@@ -5,9 +5,6 @@ name: ansible CI for macOS
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches:
-    - master
   pull_request:
     branches:
     - "*"
@@ -17,16 +14,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      # pre-build
-      - name: Set COMMIT_MESSAGE
-        run: echo ::set-env name=COMMIT_MESSAGE::$(echo "${{ github.event.head_commit.message }}" | tr '\n' ' ')
-      - name: debug
-        env:
-          GITHUB_EVENT_CONTEXT: ${{ toJson(github.event) }}
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "$GITHUB_CONTEXT"
-          echo "$GITHUB_EVENT_CONTEXT"
+      # build
       - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
       - run: brew install ansible ansible-lint
       # test
@@ -47,16 +35,20 @@ jobs:
                 "author_icon": "${{ github.event.sender.avatar_url }}",
                 "fields": [
                   {
-                    "title": "Commit Message",
-                    "value": "${{ env.COMMIT_MESSAGE }}"
+                    "title": "PR URL",
+                    "value": "${{ github.event.pull_request.html_url }}"
                   },
                   {
                     "title": "GitHub Actions URL",
                     "value": "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
                   },
                   {
-                    "title": "Compare URL",
-                    "value": "${{ github.event.compare }}"
+                    "title": "branch name",
+                    "value": "${{ github.event.}}"
+                  },
+                  {
+                    "title": "commit sha",
+                    "value": "${{ github.event.pull_request.head.sha }}"
                   }
                 ]
               }
@@ -71,21 +63,25 @@ jobs:
           attachments: |
             [
               {
-                "color": "good",
+                "color": "danger",
                 "author_name": "${{ github.actor }}",
                 "author_icon": "${{ github.event.sender.avatar_url }}",
                 "fields": [
                   {
-                    "title": "Commit Message",
-                    "value": "${{ env.COMMIT_MESSAGE }}"
+                    "title": "PR URL",
+                    "value": "${{ github.event.pull_request.html_url }}"
                   },
                   {
                     "title": "GitHub Actions URL",
                     "value": "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
                   },
                   {
-                    "title": "Compare URL",
-                    "value": "${{ github.event.compare }}"
+                    "title": "branch name",
+                    "value": "${{ github.event.}}"
+                  },
+                  {
+                    "title": "commit sha",
+                    "value": "${{ github.event.pull_request.head.sha }}"
                   }
                 ]
               }
