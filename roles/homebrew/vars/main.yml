@@ -16,3 +16,4 @@ packages:
   - { name: gh, state: present }
   - { name: awscli, state: present }
   - { name: jq, state: present }
+  - { name: nkf, state: present }
