@@ -1,0 +1,10 @@
+---
+- name: source
+  command: /bin/zsh -lc "anyenv install pyenv"
+  register: res
+  changed_when: res.rc != 0
+
+- name: source
+  command: /bin/zsh -lc "anyenv install nodenv"
+  register: res
+  changed_when: res.rc != 0
