@@ -22,3 +22,4 @@ packages:
   - { name: xz, state: present }
   - { name: zsh-completions, state: present }
   - { name: starship, state: present }
+  - { name: node, state: present }
