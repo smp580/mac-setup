@@ -24,3 +24,4 @@ packages:
   - { name: starship, state: present }
   - { name: nodebrew, state: present }
   - { name: tig, state: present }
+  - { name: node-build, state: present }
