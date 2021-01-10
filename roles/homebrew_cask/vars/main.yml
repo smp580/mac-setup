@@ -5,3 +5,4 @@ packages:
   - { name: iterm2, state: present }
   - { name: google-chrome, state: present }
   - { name: postman, state: present }
+  - { name: docker, state: present }
