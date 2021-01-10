@@ -1,12 +1,7 @@
 ## How to use
 ### 事前準備
-- install homebrew
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
-- install ansible
-```
-brew install ansible ansible-lint
+sh install.sh
 ```
 
 ### ansibleの実行
