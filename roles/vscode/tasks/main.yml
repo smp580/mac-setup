@@ -1,0 +1,12 @@
+---
+- name: vscode setting.json
+  copy:
+    src: "files/user-settings.json"
+    dest: "~/Library/Application\ Support/Code/User/settings.json"
+    mode: '0644'
+
+- name: install extensions
+  command: code --install-extension {{ item }}
+  with_items: "{{ extensions }}"
+  register: res
+  changed_when: "'is already installed.' not in res.stdout"
