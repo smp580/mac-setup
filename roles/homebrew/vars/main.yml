@@ -16,3 +16,9 @@ packages:
   - { name: gh, state: present }
   - { name: awscli, state: present }
   - { name: jq, state: present }
+  - { name: nkf, state: present }
+  - { name: anyenv, state: present }
+  - { name: readline, state: present }
+  - { name: xz, state: present }
+  - { name: zsh-completions, state: present }
+  - { name: starship, state: present }
