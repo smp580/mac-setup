@@ -1,14 +1,17 @@
-- name: copy .vimrc file
+---
+- name: ~/.vimrc
   copy:
-    src: "{{ inventory_dir }}/roles/config/files/.vimrc"
+    src: "files/.vimrc"
     dest: "~/.vimrc"
     mode: '0644'
 
-- name: copy .zshrc file
+- name: ~/.zshrc
   copy:
-    src: "{{ inventory_dir }}/roles/config/files/.zshrc"
+    src: "files/.zshrc"
     dest: "~/.zshrc"
     mode: '0644'
 
 - name: source
-  shell: source ~/.zshrc
+  command: /bin/zsh "source ~/.zshrc"
+  register: res
+  changed_when: res.rc != 0
