@@ -9,3 +9,6 @@
     src: "{{ inventory_dir }}/roles/config/files/.zshrc"
     dest: "~/.zshrc"
     mode: '0644'
+
+- name: source
+  shell: source ~/.zshrc
