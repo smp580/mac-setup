@@ -3,3 +3,9 @@
     src: "{{ inventory_dir }}/roles/config/files/.vimrc"
     dest: "~/.vimrc"
     mode: '0644'
+
+- name: copy .zshrc file
+  copy:
+    src: "{{ inventory_dir }}/roles/config/files/.zshrc"
+    dest: "~/.zshrc"
+    mode: '0644'
