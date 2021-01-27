@@ -8,3 +8,4 @@ packages:
   - { name: docker, state: present }
   - { name: alfred, state: present }
   - { name: shiftit, state: present }
+  - { name: 1password-cli, state: present }
