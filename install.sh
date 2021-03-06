@@ -8,7 +8,6 @@ function result() {
     msg "Succeeded $@"
   else
     msg "Failed $@"
-    exit 1
   fi
 }
 
@@ -19,3 +18,7 @@ result 'install homebrew'
 msg 'Start install ansible, ansible-lint'
 brew install ansible ansible-lint
 result 'install ansible, ansible-lint'
+
+msg 'Start install ansible plugin'
+ansible-galaxy collection install community.general
+result 'install ansible plugin'
