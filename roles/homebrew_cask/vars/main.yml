@@ -9,3 +9,4 @@ packages:
   - { name: alfred, state: present }
   - { name: shiftit, state: present }
   - { name: 1password-cli, state: present }
+  - { name: aws-vault, state: present }
